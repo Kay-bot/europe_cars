@@ -5,8 +5,9 @@
 <h5 class="card-title">Cars for Sale</h5>
 <div class="list-group">   
       <a> <%=image_tag @car.image%> <span style="float:right">
-          <form action="#" method="post">
-            <button type="submit">X</button>
+          <form action="/delete_car/:id" method="post">
+          <br>
+            <button type="submit"><%= link_to "Delete", delete_car_path(@car), :confirm => "Are you sure?", :method => :delete %></button>
           </form>
         </span>
       </a>         

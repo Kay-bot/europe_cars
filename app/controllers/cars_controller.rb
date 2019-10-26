@@ -32,4 +32,9 @@ class CarsController < ApplicationController
     params.require(:car).permit(:make, :model, :year, :color, :image)
   end 
   
+  def destroy
+    @car = Car.find_by_unique_identifier(params[:id])
+    @car.destroy
+    redirect_to 'cars#show', :notice => "Your car has been deleted"
+  end
 end

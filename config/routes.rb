@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   
   root :to => 'cars#index'
-  get 'add_car', to: 'cars#new', as: 'add_car'
+  get 'add_car', to:'cars#new', as:'add_car'
+  get 'delete_car', to:'cars#show', as:'delete_car'
 
-  
   resources :cars
 
   get 'signup', to: 'users#new', as: 'signup'
