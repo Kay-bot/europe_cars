@@ -37,11 +37,30 @@
             <div class="md-form active-pink active-pink-2 mb-3 mt-0">
             <input class="form-control" type="text" placeholder="Search" aria-label="Search">
             </div>
+            <%= form_for "",url: cars_path, role: "search", method: :get do %>
+            <%= text_field_tag :search, @search_term, placeholder: "Search" %>
+            <% end %>
 
         </div>
       </div>
     </div>
   </header>
+
+  <h2>All Cars</h2>
+  <ul>
+    <% @cars.each do |car| %>
+      <div>
+        <li>
+          <% if car.image %>
+            <%= link_to (image_tag car.image), car_path(car.id) %>
+          <% end %>
+          <%= car.model %>,
+          <%= car.year %>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+
 
    <section class="features-icons bg-light text-center">
     <div class="container">

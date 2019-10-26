@@ -3,10 +3,32 @@
 
 <div class="container">
 
-    <form action="#" method="post">
-        <input type="text" name="carName" placeholder="Add a car here">
-        <button type="submit">Add</button>
-    </form>
+<div class="form-group">
+  <%= form_for @car, html: {multipart: true} do |f| %>
+  <%= f.label :make %>
+  <%= f.text_field :make, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :model %>
+  <%= f.text_field :model, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :year %>
+  <%= f.text_field :year, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :color %>
+  <%= f.text_field :color, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.submit %>
+  <% end %>
+
+</div>
 
   </div>
 
