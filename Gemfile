@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rails',      '6.0.0'
-gem 'pg', '1.1.4'
+#gem 'pg', '1.1.4'
 gem 'bcrypt', '~> 3.1.7'
 gem 'puma',       '3.12.1'
 gem 'sass-rails', '5.1.0'
@@ -32,7 +32,7 @@ group :test do
 end
 
 group :production do
-  #gem 'pg', '1.1.4'
+  gem 'pg', '1.1.4'
   gem 'rails_12factor'
 end
 
