@@ -1,17 +1,14 @@
-<h1><%= @car.make %> <%= @car.model %></h1>
+<h1><%= @car.make %><%= @car.model%></h1>
 <p>Find me in app/views/cars/show.html.erb</p>
 <div class="container">
 
 <h5 class="card-title">Cars for Sale</h5>
 <div class="list-group">   
       <a> <%=image_tag @car.image%> <span style="float:right">
-          <form action="/delete_car/:id" method="post">
-          <br>
-            <button type="submit"><%= link_to "Delete", delete_car_path(@car), :confirm => "Are you sure?", :method => :delete %></button>
-          </form>
         </span>
       </a>         
-
+    <br>
+        <button><%= link_to "Delete", href="/cars/"+@car.id.to_s, :confirm => "Are you sure?", :method => :delete %></button>
     <br/>
   <% if @current_user %>
     <form action="#" method="post">
