@@ -1,2 +1,37 @@
-<h1>Cars#edit</h1>
-<p>Find me in app/views/cars/edit.html.erb</p>
+<h1>Edit Car</h1>
+
+<div class="container">
+
+<div class="form-group">
+  <%= form_for @car, method: :patch, html: {multipart: true} do |f| %>
+  <%= f.label :make %>
+  <%= f.text_field :make, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :model %>
+  <%= f.text_field :model, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :year %>
+  <%= f.text_field :year, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :color %>
+  <%= f.text_field :color, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.label :image %>
+  <%= f.text_field :image, class: "form-control" %>
+  <br>
+  <br>
+  <%= f.submit %>
+  <% end %>
+
+</div>
+
+  </div>
+
+  <br>
+
+</div>
+

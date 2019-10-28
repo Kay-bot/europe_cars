@@ -5,19 +5,15 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Car.destroy_all
-        
-Car.create(make: 'Audi', model: 'A3 S line Auto quattro', year:2018, color: 'White', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'S3 Auto quattro', year:2019, color: 'Black', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'A4 45 TFSI', year:2019, color: 'White', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'A3 35 TFSI', year:2019, color: 'Silver', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'Q8 55 TFSI', year:2019, color: 'Black', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'A4 45 TFSI', year:2019, color: 'Black', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'SQ5 Auto quattro', year:2019, color: 'Silver', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'S3 Auto quattro', year:2019, color: 'Black', image:"http://www.fillmurray.com/200/200")
-Car.create(make: 'Audi', model: 'A3 S line Auto quattro', year:2018, color: 'White', image:"http://www.fillmurray.com/200/200")
-
+    
 User.destroy_all
-User.create(name: 'luke', password_digest: BCrypt::Password.create('Jedi'), email: 'luke@ga.com')
-User.create(name: 'han', password_digest: BCrypt::Password.create('Falcon'), email: 'han@ga.com')
-User.create(name: 'leia', password_digest: BCrypt::Password.create('Alderaan'), email: 'leia@ga.com')
+user1 = User.create(name: 'luke', password_digest: BCrypt::Password.create('Jedi'), email: 'luke@ga.com')
+user2 = User.create(name: 'han', password_digest: BCrypt::Password.create('Falcon'), email: 'han@ga.com')
+user3 = User.create(name: 'leia', password_digest: BCrypt::Password.create('Alderaan'), email: 'leia@ga.com')
+
+Car.destroy_all      
+Car.create([
+    {make: 'Audi', model: 'A3 S line Auto quattro', year:2018, color: 'White', image:"http://www.fillmurray.com/200/200", user_id: user1.id},
+    {make: 'Audi', model: 'S3 Auto quattro', year:2019, color: 'Black', image:"http://www.fillmurray.com/200/200", user_id: user2.id},
+    {make: 'Audi', model: 'A4 45 TFSI', year:2019, color: 'White', image:"http://www.fillmurray.com/200/200", user_id: user3.id}
+])

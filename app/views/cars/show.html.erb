@@ -4,18 +4,28 @@
 
 <h5 class="card-title">Cars for Sale</h5>
 <div class="list-group">   
-      <a> <%=image_tag @car.image%> <span style="float:right">
-        </span>
-      </a>         
-    <br>
-        <button><%= link_to "Delete", href="/cars/"+@car.id.to_s, :confirm => "Are you sure?", :method => :delete %></button>
+       <div>
+       <li>
+       <a><%=image_tag @car.image%></a> <br>
+          <%= @car.make%> <br>
+          <%= @car.user.name%><br>
+          <%= @car.model%> <br>
+          <%= @car.year %> <br>
+          <%= @car.color%>
+       </li>
+       </div>
+            
+       <br>
+         <% if current_user %>
+            <% if current_user.id == @car.user_id %>
+               <button><%= link_to "Delete", href="/cars/"+@car.id.to_s, :confirm => "Are you sure?", :method => :delete %></button>
+               <%= link_to 'Edit', href="/cars/"+@car.id.to_s+"/edit" %> <%= link_to 'Back', cars_path %>
+            <% end %>
+         <% else %>
+            stuff for if they are not logged in
+         <% end %>
+        
     <br/>
-  <% if @current_user %>
-    <form action="#" method="post">
-        <input type="text" name="carName" placeholder="Add a car here">
-        <button type="submit">Add</button>
-    </form>
-  <% end %>
 
   </div>
 

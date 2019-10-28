@@ -1,20 +1,32 @@
 class CarsController < ApplicationController
   
   def index
-    @cars = Car.all
+    @allCars = Car.all
+    @allUsers = User.all
+    @search_term = "search_value"
+  
     # TODO: get the 's' query parameter value
     # if its not set - set @cars to Car.all
     # otherwise if it is set - set @cars to Car.something
     # where something is filtering the cars by the s query parameter
   end
   def new
-    @car = Car.new
+    if current_user 
+      @car = Car.new
+    else 
+      redirect_to '/login'
+    end
   end
 
   def create
-    @car = Car.new(car_params)
-    @car.save
-    redirect_to '/cars', notice: 'Car was successfully created'
+    if current_user 
+      @car = Car.new(car_params)
+      @car.user_id = current_user.id
+      @car.save
+      redirect_to '/cars', notice: 'Car was successfully created'
+    else 
+      redirect_to '/login'
+    end
   end
 
   def show
@@ -28,9 +40,19 @@ class CarsController < ApplicationController
     
   end
 
+  def update
+    @car = Car.find(params[:id])
+
+   @car.update(car_params)
+      redirect_to @car
+
+  
+  end
+
   
 
   def edit
+    @car = Car.find params[:id]
   end
 
   private 

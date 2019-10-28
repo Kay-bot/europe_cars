@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root :to => 'cars#index'
   get 'add_car', to:'cars#new', as:'add_car'
   delete '/cars/:id' => 'cars#delete_car'
+  get '/cars/:id/edit' =>'cars#edit'
   resources :cars
 
   get 'signup', to: 'users#new', as: 'signup'

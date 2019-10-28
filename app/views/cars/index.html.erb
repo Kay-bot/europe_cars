@@ -40,22 +40,36 @@
       </div>
     </div>
   </header>
-
   <h2>All Cars</h2>
-  <ul>
-    <% @cars.each do |car| %>
+  <p>
+    your search is: <%= @search_term  %>
+  </p>
+  <% @allCars.each do |car| %>
       <div>
-        <li>
           <% if car.image %>
             <%= link_to (image_tag car.image), car_path(car.id) %>
           <% end %>
-          <%= car.model %>,
+          <br>
+          <%= car.model %>,<br>
           <%= car.year %>
-        </li>
       </div>
     <% end %>
-  </ul>
 
+  <h2>All Users</h2>
+  <% @allUsers.each do |user| %>
+      <div>
+        <%= user.name %>
+      </div>
+    <% end %>
+
+  <p>User with id 1</p>
+  <%=@user%>
+
+  <p>Cars for user with id 1</p>
+   <%=@userCars.inspect%>
+
+  <p>Car make for user with id 1</p>
+   <%=@userCarsMakes.inspect%>
 
    <section class="features-icons bg-light text-center">
     <div class="container">
