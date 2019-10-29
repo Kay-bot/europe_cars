@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  
+  get 'posts/index' => 'posts#index' 
+  resources :posts
+
+  get 'home/index'
   root :to => 'cars#index'
   get 'add_car', to:'cars#new', as:'add_car'
   delete '/cars/:id' => 'cars#delete_car'
