@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'home/index'
   root :to => 'cars#index'
   get 'add_car', to:'cars#new', as:'add_car'
+  get '/all_cars' => 'cars#all_cars'
   delete '/cars/:id' => 'cars#delete_car'
   get '/cars/:id/edit' =>'cars#edit'
   resources :cars

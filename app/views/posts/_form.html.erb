@@ -1,18 +1,25 @@
-<%= form_for(@post) do |f| %>
+<div id = "NewPost" class = "container">
+<br>
+<div id = "postForm" class="form-group">
+  <%= form_for(@post) do |f| %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content %>
-  </div>
-  <div class="actions">
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "form-control" %>
+      <br>
+      <br>
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control"%>
+      <br>
+      <br>
+    <%= f.label :content %>
+    <%= f.text_area :content, class: "form-control" %>
+      <br>
+      <br>
     <%= f.submit %>
   </div>
+  </form>
+
+  <br>
 <% end %>
+</div>
+<br>

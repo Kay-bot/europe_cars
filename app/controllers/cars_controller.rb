@@ -10,11 +10,14 @@ class CarsController < ApplicationController
   end
 
   def index
-    @allCars = Car.all
     @allUsers = User.all
     @search_term = "search_value"
-  
   end
+
+  def all_cars
+    @allCars = Car.all
+  end
+  
   def new
     if current_user 
       @car = Car.new

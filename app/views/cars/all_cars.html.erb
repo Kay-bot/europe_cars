@@ -1,0 +1,13 @@
+<div class="container">
+<h2>All Cars</h2>
+<% @allCars.each do |car| %>
+      <div>
+          <% if car.image %>
+            <%= link_to (image_tag car.image), car_path(car.id) %>
+          <% end %>
+          <br>
+          <%= car.model %>,<br>
+          <%= car.year %>
+      </div>
+    <% end %>
+</div>

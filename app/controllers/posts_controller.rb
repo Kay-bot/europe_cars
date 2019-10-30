@@ -8,15 +8,24 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    if current_user 
     @post = Post.new
+    else 
+      redirect_to '/login'
+    end
   end
 
   # POST /posts
   # POST /posts.json
   def create
+    if current_user 
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     @post.save
     redirect_to @post, :notice => 'Post was successfully created'
+    else 
+      redirect_to '/login'
+    end
   end
 
   # GET /posts/1
