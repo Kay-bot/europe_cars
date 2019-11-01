@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get '/search' => 'pages#search', :as => 'search_page'
+  
   get 'posts/index' => 'posts#index' 
   resources :posts
 
@@ -9,7 +11,6 @@ Rails.application.routes.draw do
 
   get 'home/index'
   root :to => 'cars#index'
-  get '/search', to: 'cars#search_term'
   get 'add_car', to:'cars#new', as:'add_car'
   get '/all_cars' => 'cars#all_cars'
   delete '/cars/:id' => 'cars#delete_car'

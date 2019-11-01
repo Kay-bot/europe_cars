@@ -1,0 +1,9 @@
+<div class = "container">
+    <%= form_tag(search_page_path, :method => "get") do %>
+    <div class="input-group mb-3">
+    <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-sizing-default">Search</span>
+  </div>
+    <%= text_field_tag(:search, params[:search], placeholder: "Couldn't find what you are looking for? Search here", class: "form-control") %>
+    <% end %>
+</div>

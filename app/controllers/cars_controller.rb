@@ -6,7 +6,6 @@ class CarsController < ApplicationController
     # where something is filtering the cars by the s query parameter
 
   def index
-    @search_term = "search_value"
     @posts = Post.all
   end
 
