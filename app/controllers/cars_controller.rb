@@ -54,7 +54,6 @@ class CarsController < ApplicationController
    @car.update(car_params)
       redirect_to @car, :notice => "Your car was successfully updated"
 
-  
   end
 
   

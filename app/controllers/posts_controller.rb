@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
 
   # GET /posts
-  # GET /posts.json
   def index
     @posts = Post.all
   end
@@ -16,7 +15,6 @@ class PostsController < ApplicationController
   end
 
   # POST /posts
-  # POST /posts.json
   def create
     if current_user 
     @post = Post.new(post_params)
@@ -29,7 +27,6 @@ class PostsController < ApplicationController
   end
 
   # GET /posts/1
-  # GET /posts/1.json
   def show
       @post = Post.find(params[:id])
      
@@ -41,7 +38,6 @@ class PostsController < ApplicationController
   end
 
   # DELETE /posts/1
-  # DELETE /posts/1.json
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
@@ -50,7 +46,6 @@ class PostsController < ApplicationController
   end
 
   # PATCH/PUT /posts/1
-  # PATCH/PUT /posts/1.json
   def update
     @post = Post.find(params[:id])
 
@@ -60,7 +55,6 @@ class PostsController < ApplicationController
   end
 
   
-    # Never trust parameters from the scary internet, only allow the white list through.
     private 
     def post_params
       params.require(:post).permit(:name, :title, :content)

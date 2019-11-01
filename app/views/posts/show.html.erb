@@ -1,4 +1,4 @@
-
+<div class = "container">
 <p id="notice"><%= notice %></p>
  
 <p>
@@ -10,12 +10,41 @@
   <b>Title:</b>
   <%= @post.title %>
 </p>
- 
+
 <p>
   <b>Content:</b>
   <%= @post.content %>
 </p>
+<div id = "comment" class = "container">
+  <h2>Comments</h2>
+  <hr>
+  <% @post.comments.each do |comment| %>
+  <p>
+    <b>Commenter:</b>
+    <%= comment.commenter %>
+  </p>
  
+  <p>
+    <b>Comment:</b>
+    <%= comment.body %>
+  </p>
+    
+  <p>
+  <%= link_to 'Delete Comment', [comment.post, comment],
+                :confirm => 'Are you sure?',
+                :method => :delete %>
+  </p>
+ 
+  <hr>
+  <% end %>
+  
+</div> 
+
+
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+
 <% if current_user %>
 <% if current_user.id == @post.user_id %>
 <%= link_to 'Edit', edit_post_path(@post) %> |
@@ -24,5 +53,7 @@
 <%= link_to 'Back', posts_path %> |
 <% end %>
 <% end %>
+
+</div>
 
 

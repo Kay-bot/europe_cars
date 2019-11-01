@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
+
   get 'posts/index' => 'posts#index' 
   resources :posts
+
+  resources :posts do
+    resources :comments
+  end
 
   get 'home/index'
   root :to => 'cars#index'
