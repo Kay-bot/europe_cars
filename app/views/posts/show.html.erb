@@ -4,7 +4,7 @@
   <b>T<%= @post.title %></b>
 </p>
 <% if @post.image %>
-        <a><img src="<%=(image_tag @post.image), post_path(@post.id) %>"class="img-fluid" alt="Responsive image"></a>>
+        <a><img src="<%=(image_url @post.image)%> "class="img-fluid" alt="Responsive image"></a>
     <% end %>
 
 <p>
@@ -29,7 +29,10 @@
 <br>
 <%= render @post.comments %>
 
+<br>
+<br>
 <b>Add a comment:</b>
+<br>
 <%= render "comments/form" %>
 
 <% if current_user %>
@@ -40,6 +43,7 @@
 <%= link_to 'Back', posts_path %> |
 <% end %>
 <% end %>
+<%= link_to 'Back', posts_path %>
 
 </div>
 
