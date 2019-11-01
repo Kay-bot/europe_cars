@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
     def search  
         if params[:search].blank?  
-            redirect_to(root_path, :alert => "Sorry! We couldn't find what you're looking for") and return  
+            redirect_to('/all_cars', :alert => "Sorry! We couldn't find what you're looking for") and return  
         else  
             @parameter = params[:search].downcase  
             @results = Car.all.where("lower(make) LIKE :search", search: "%#{@parameter}%")    

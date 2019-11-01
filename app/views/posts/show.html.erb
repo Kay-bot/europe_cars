@@ -4,7 +4,7 @@
   <b>T<%= @post.title %></b>
 </p>
 <% if @post.image %>
-        <%= link_to (image_tag @post.image), post_path(@post.id) %>
+        <a><img src="<%=(image_tag @post.image), post_path(@post.id) %>"class="img-fluid" alt="Responsive image"></a>>
     <% end %>
 
 <p>

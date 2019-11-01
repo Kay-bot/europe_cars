@@ -49,9 +49,6 @@
   <h4>News & Reviews</h4><br>
     <% @posts.each do |post| %>
     <h5><%= post.title %></h5> 
-    <% if post.image %>
-        <%= link_to (image_tag post.image), post_path(post.id)%>
-    <% end %>
     <br>
     <h6>Author:<%= post.name %></h6>
     <p><%= post.content %><a><%= link_to 'Read more', post %></a></p>
