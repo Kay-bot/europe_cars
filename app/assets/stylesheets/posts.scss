@@ -14,6 +14,20 @@ body {
     background-color: sandybrown;
   }
 
+  body {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+  }
+  
   p, ol, ul, td {
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;

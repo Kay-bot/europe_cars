@@ -2,7 +2,10 @@
 <br>
 <div id = "postForm" class="form-group">
   <%= form_for(@post) do |f| %>
-
+    <%= f.label :image %>
+    <%= f.text_field :image, class: "form-control" %>
+      <br>
+      <br>
     <%= f.label :name %>
     <%= f.text_field :name, class: "form-control" %>
       <br>
@@ -13,6 +16,10 @@
       <br>
     <%= f.label :content %>
     <%= f.text_area :content, class: "form-control" %>
+      <br>
+      <br>
+    <%= f.label :body_long%>
+    <%= f.text_area :body_long, class: "form-control" %>
       <br>
       <br>
     <%= f.submit %>

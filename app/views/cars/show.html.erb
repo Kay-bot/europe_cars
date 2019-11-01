@@ -7,14 +7,17 @@
       <h1 class="h1-responsive my-4"><%= @car.make %><%= @car.model%></h1>
       <h5 class="card-title">Cars for Sale</h5>
       <p id="notice"><%= notice %></p>
+      <b>Seller: <%= @car.user.name%></b>
+      <br>
        <a><img src="<%=image_url(@car.image) %>" class="img-fluid" alt="Responsive image"></a> 
        <br>
        <div class="w-responsive mx-auto mb-5">
-          <%= @car.make%> <br>
-          <%= @car.user.name%><br>
-          <%= @car.model%> <br>
-          <%= @car.year %> <br>
-          <%= @car.color%>
+       <br>
+          <p><b><%= @car.make%></b><%= @car.model%></p>
+          <p><b>Year:</b> <%= @car.year %> </p>
+          <p><b>Color:</b> <%= @car.color%></p>
+          <p><b>Key features: </b><%= @car.key_features %></p>
+          <p>Drive away from<b> </b> <%= @car.price%>*</p>
       </div>
     
        <br>
@@ -30,7 +33,7 @@
    <div class = "container">
                <!--Section: Contact v.2-->
                <!--Section heading-->
-               <h2 class="h1-responsive my-4">Contact Us</h2>
+               <h2 class="h1-responsive my-4">Contact <%= @car.user.name%><br></h2>
                <!--Section description-->
                <p class="w-responsive mx-auto mb-5">Do you have any questions? Our team will come back to you within
                   a matter of hours to help you.</p>

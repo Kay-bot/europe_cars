@@ -1,0 +1,14 @@
+<div id = "comment" class = "container">
+    <p><%= comment.commenter %> : <%= comment.body %></p>
+    <p>
+  <%= link_to 'Delete Comment', [comment.post, comment],
+                :confirm => 'Are you sure?',
+                :method => :delete %>
+  </p>
+  <hr>
+</div> 
+
+
+   
+
+

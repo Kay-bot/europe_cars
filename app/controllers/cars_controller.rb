@@ -1,17 +1,13 @@
 class CarsController < ApplicationController
   
-  def self.search_by(search_term)
-    
     # TODO: get the 's' query parameter value
     # if its not set - set @cars to Car.all
     # otherwise if it is set - set @cars to Car.something
     # where something is filtering the cars by the s query parameter
-    
-  end
 
   def index
-    @allUsers = User.all
     @search_term = "search_value"
+    @posts = Post.all
   end
 
   def all_cars
@@ -65,7 +61,7 @@ class CarsController < ApplicationController
   private 
 
   def car_params 
-    params.require(:car).permit(:make, :model, :year, :color, :image)
+    params.require(:car).permit(:make, :model, :year, :color, :image, :price, :key_features)
   end 
   
   

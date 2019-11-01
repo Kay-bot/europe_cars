@@ -34,61 +34,38 @@
           <% end %>
     </div>
   </header>
-  
-  <p>
-    your search is: <%= @search_term  %>
-  </p>
-  
-  <h2>All Users</h2>
-  <% @allUsers.each do |user| %>
-      <div>
-        <%= user.name %>
-      </div>
-    <% end %>
-
-  <p>User with id 1</p>
-  <%=@user%>
-
-  <p>Cars for user with id 1</p>
-   <%=@userCars.inspect%>
-
-  <p>Car make for user with id 1</p>
-   <%=@userCarsMakes.inspect%>
-
-   <section class="features-icons bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
-            </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
-            </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
-            </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-          </div>
-        </div>
-      </div>
+  <br>
+  <div class = "container">
+    <div class="container text-center bg-ligh">
+    <h3>Start your new car search</h3>
     </div>
-  </section>
+  <p>Your search is: <%= @search_term  %></p>
+    <div class="row">
+    <div class="col-6"><img src="<%= image_url'https://carsales.pxcrush.net/car/cil/cc4942646728280094924p.png?width=600&height=300&aspect=FitWithIn&overlay&watermark=1009586993'%>" class="img-fluid" alt="Responsive image"></div>
+    <div class="col-6"><img src="<%= image_url'https://carsales.pxcrush.net/car/cil/r12ufni8h8k2fxh4fy9ycgpd3.jpg?width=600&height=300&aspect=FitWithIn&overlay&watermark=1201352344'%>" class= "img-fluid" alt="Responsive image"></div>
+    </div>
+    <div class="row">
+    <div class="col-6"><img src="<%= image_url'https://carsales.pxcrush.net/car/cil/hfljcrr2ncz9q6b06nh1p8ug1.jpg?width=600&height=300&aspect=FitWithIn&overlay&watermark=370668372'%>" class= "img-fluid" alt="Responsive image"></div>
+    <div class="col-6"><img src="<%= image_url'https://carsales.pxcrush.net/car/cil/1k3mm8n061v879tr9c1bo.jpg?width=600&height=300&aspect=FitWithIn&overlay&watermark=1428113739'%>" class= "img-fluid" alt="Responsive image"></div>
+    </div>
+  </div>
+   
 
+  <div class="container bg-light"> 
+  <h4>News & Reviews</h4><br>
+    <% @posts.each do |post| %>
+    <h5><%= post.title %></h5> 
+    <% if post.image %>
+        <%= link_to (image_tag post.image), post_path(post.id)%>
+    <% end %>
+    <br>
+    <h6>Author:<%= post.name %></h6>
+    <p><%= post.content %><a><%= link_to 'Read more', post %></a></p>
+      <br>
+      <br>
+    <% end %>
+   </div>
+  
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

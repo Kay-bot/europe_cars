@@ -1,11 +1,16 @@
 <div class = "container">
-<h1>Listing posts</h1>
+<h1>News Reviews Advice</h1>
 <br>
 <br>
 <div class = "container">   
 <% @posts.each do |post| %>
-<h3>Author:<%= post.name %></h3>
 <h4><%= post.title %></h4>
+<% if post.image %>
+        <%= link_to (image_tag post.image), post_path(post.id) %>
+    <% end %>
+    <br>
+<h5>Author:<%= post.name %></h5>
+<br>
 <p><%= post.content %></p>
 <a><%= link_to 'Read more', post %></a>
 <br>
