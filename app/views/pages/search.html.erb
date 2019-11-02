@@ -1,12 +1,12 @@
 
+<div class = "container">
 <h3>Search Result</h3>  
         <p><%= alert %></p>
     <% @results.each do |result| %>  
-        <div>
-          <% if result.image %>
-            <%= link_to (image_tag result.image)%>
+        <% if result.image %>
+        <%= link_to (image_tag result.image)%>
         <%end%>
-            <p><b><%= result.make%></b>, <%= result.model%>, <%= result.year %></p>
-        </div> 
-    <% end %>
+            <p><b><%= result.make%></b>, <%= result.model%>, <%= result.year %></p> 
+        <% end %>
      <%= link_to 'Back', '/cars' %>
+     </div>

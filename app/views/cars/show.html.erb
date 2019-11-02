@@ -4,7 +4,7 @@
 
    <div class = "container">
 
-      <h1 class="h1-responsive my-4"><%= @car.make %><%= @car.model%></h1>
+      <h1 class="h1-responsive my-4"><%= @car.make %> <%= @car.model%></h1>
       <h5 class="card-title">Cars for Sale</h5>
       <p id="notice"><%= notice %></p>
       <b>Seller: <%= @car.user.name%></b>
@@ -13,7 +13,7 @@
        <br>
        <div class="w-responsive mx-auto mb-5">
        <br>
-          <p><b><%= @car.make%></b><%= @car.model%></p>
+          <p><b><%= @car.make%></b> <%= @car.model%></p>
           <p><b>Year:</b> <%= @car.year %> </p>
           <p><b>Color:</b> <%= @car.color%></p>
           <p><b>Key features: </b><%= @car.key_features %></p>
